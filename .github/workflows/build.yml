@@ -13,7 +13,7 @@ jobs:
     - name: Install System Dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y libglfw3 libglfw3-dev libinput-dev
+        sudo apt-get install -y libglfw3 libglfw3-dev libinput-dev xserver-xorg-input-all xserver-xorg-video-all
     - uses: actions/checkout@v4
     - name: make
       run: make -Bk
