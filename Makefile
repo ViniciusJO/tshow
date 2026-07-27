@@ -1,7 +1,7 @@
 CFLAGS:=-Wall -Wextra -Wno-implicit-fallthrough -Wno-misleading-indentation -Wno-shift-negative-value -ggdb
 INCLUDES:=-I/usr/include/SDL2
 DEFINED:=-D_GNU_SOURCE=1 -D_REENTRANT 
-LIBS:=-lraylib -lm -lX11 -linput -ludev -lXfixes -lSDL2 -lXext -lGL -lglfw
+LIBS:=-lm -lX11 -linput -ludev -lXfixes -lXext -lGL -lglfw
 BINARY:=tshow
 
 .PHONY: all run clear
