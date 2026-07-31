@@ -3,6 +3,8 @@ name: Build and release
 on:
   push:
     branches: [ "master" ]
+    tags:
+      - 'v*'
   pull_request:
     branches: [ "master" ]
 
@@ -21,12 +23,15 @@ jobs:
           xserver-xorg-video-all \
           libxfixes-dev
     - uses: actions/checkout@v4
-    - name: make
+    - name: Make
       run: make -Bk
+    - name: Pack
+      run: tar czvf tshow.tar.gz tshow
     - name: Release
       uses: softprops/action-gh-release@v3
+      if: github.ref_type == 'tag'
       with:
-        files: tshow
+        files: tshow.tar.gz
 
 
 #    - name: configure
